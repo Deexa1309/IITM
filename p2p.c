@@ -4,7 +4,7 @@
 #include <omp.h>
 
 void matrixMultiplication(int **mat1, int **mat2, int **result, int row1, int col1, int row2, int col2) {
-    #pragma omp parallel num_threads(100)
+    #pragma omp parallel num_threads(10)
     {
     #pragma omp for
     for (int i = 0; i < row1; ++i) {
@@ -18,7 +18,7 @@ void matrixMultiplication(int **mat1, int **mat2, int **result, int row1, int co
 }
 
 void displayMatrix(int **matrix, int rows, int cols) {
-    #pragma omp parallel num_threads(100)
+    #pragma omp parallel num_threads(10)
     {
       #pragma omp for
     for (int i = 0; i < rows; ++i) {
